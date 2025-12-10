@@ -7,6 +7,7 @@ from typing import List, TYPE_CHECKING
 if TYPE_CHECKING:
     from .user import User
 
+
 class Recipe(Base):
     __tablename__ = "recipes"
 
@@ -14,9 +15,11 @@ class Recipe(Base):
     title: Mapped[str] = mapped_column(String, index=True, nullable=False)
     description: Mapped[str | None] = mapped_column(String, nullable=True)
     ingredients: Mapped[List[str]] = mapped_column(JSON, nullable=False)
-    
+
     # Foreign Key
-    owner_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), index=True, nullable=False)
+    owner_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("users.id"), index=True, nullable=False
+    )
 
     # Relationship
     owner: Mapped["User"] = relationship(back_populates="recipes")
