@@ -6,6 +6,7 @@ from typing import List, TYPE_CHECKING
 if TYPE_CHECKING:
     from .recipe import Recipe
 
+
 class User(Base):
     __tablename__ = "users"
 
@@ -16,4 +17,6 @@ class User(Base):
 
     # Relationship: One User has Many Recipes
     # "Recipe" is a forward reference (string) to avoid circular imports
-    recipes: Mapped[List["Recipe"]] = relationship(back_populates="owner", cascade="all, delete-orphan")
+    recipes: Mapped[List["Recipe"]] = relationship(
+        back_populates="owner", cascade="all, delete-orphan"
+    )
