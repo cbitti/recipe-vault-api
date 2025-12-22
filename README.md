@@ -12,7 +12,7 @@ RecipeVault is a production-grade backend API for managing user-generated recipe
 * **Secure Authentication:** OAuth2 compliant login flow with **PyJWT** (access tokens) and **Argon2** (password hashing).
 * **Advanced Search:** Filtering recipes by owner and keyword search using SQLAlchemy dynamic queries.
 * **Robust Validation:** Data integrity ensured by **Pydantic V2** schemas.
-* **Containerized Deployment:** Fully Dockerized application with multi-stage builds for optimized images.
+* **Containerized Deployment:** Fully Dockerized application ensuring consistent runtime environments.
 * **CI/CD Pipeline:** Automated testing, linting, and Docker publishing via **GitHub Actions**.
 
 ---
